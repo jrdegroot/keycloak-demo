@@ -32,8 +32,12 @@ public class SecurityConfig {
 
         // We're using JWT tokens
         http.oauth2ResourceServer(
-                ors -> ors.jwt(jwt -> {}));
-
+                ors ->
+                        ors.jwt(
+                                jwt ->
+                                        jwt.jwtAuthenticationConverter(
+                                                new JwtAuthenticationTokenConverter(
+                                                        accessToken -> keycloakCLient.getUserInfo("Bearer %s".formatted(accessToken))))));
 
         http.authorizeHttpRequests(
                 authorize -> {
