@@ -1,0 +1,12 @@
+spring:
+  application:
+    name: keycloak-demo
+  security:
+    oauth2:
+      resourceserver:
+        jwt:
+          issuer-uri: ${issuer}
+
+issuer: http://localhost:8180/realms/demo-realm
+frontend:
+  url: http://localhost:4200
