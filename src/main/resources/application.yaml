@@ -9,4 +9,13 @@ spring:
 
 issuer: http://localhost:8180/realms/demo-realm
 frontend:
-  url: http://localhost:4200
+  url: http://localhost:4200/
+
+
+logging:
+  level:
+    root: INFO
+    controller: DEBUG
+    config: DEBUG
+    org.springframework.security: DEBUG
+    org.springframework.web.cors: DEBUG
