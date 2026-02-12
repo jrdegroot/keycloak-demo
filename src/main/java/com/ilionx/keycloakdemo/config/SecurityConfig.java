@@ -1,11 +1,8 @@
 package com.ilionx.keycloakdemo.config;
 
-import com.ilionx.keycloakdemo.client.KeycloakClient;
-import com.ilionx.keycloakdemo.jwt.JwtAuthenticationTokenConverter;
 import lombok.RequiredArgsConstructor;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.http.HttpMethod;
 import org.springframework.security.config.annotation.method.configuration.EnableMethodSecurity;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
@@ -18,7 +15,6 @@ import org.springframework.web.cors.CorsConfigurationSource;
 @EnableMethodSecurity(jsr250Enabled = true, prePostEnabled = false)
 public class SecurityConfig {
 
-    private final KeycloakClient keycloakCLient;
     private final CorsConfigurationSource corsConfigurationSource;
 
 
